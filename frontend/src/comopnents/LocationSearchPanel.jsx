@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const LocationSearchPanel = ({
   setVehiclePanel,
   setPickup,
   setDestination,
   activeField,
-  setPanelOpen
+  setPanelOpen,
 }) => {
   const locations = [
     "Location_1",
@@ -16,9 +16,9 @@ const LocationSearchPanel = ({
   ];
 
   const handleLocationClick = (location) => {
-    if (activeField === 'pickup') {
+    if (activeField === "pickup") {
       setPickup(location);
-    } else if (activeField === 'destination') {
+    } else if (activeField === "destination") {
       setDestination(location);
     }
     setPanelOpen(false);
@@ -27,18 +27,16 @@ const LocationSearchPanel = ({
 
   return (
     <div>
-      {locations.map((elem,index) => (
+      {locations.map((elem, index) => (
         <div
           key={index}
           onClick={() => handleLocationClick(elem)}
-          className='flex gap-4 border-2 p-3 border-gray-100 active:border-black rounded-xl items-center m-4 justify-start cursor-pointer'
+          className="flex gap-4 border-2 p-3 border-gray-100 active:border-black rounded-xl items-center m-4 justify-start cursor-pointer"
         >
-          <h2 className='bg-[#eee] h-8 flex items-center justify-center w-12 rounded-full'>
+          <h2 className="bg-[#eee] h-8 flex items-center justify-center w-12 rounded-full">
             <i className="ri-map-pin-fill"></i>
           </h2>
-          <h4 className='font-medium'>
-            {elem}
-          </h4>
+          <h4 className="font-medium">{elem}</h4>
         </div>
       ))}
     </div>
